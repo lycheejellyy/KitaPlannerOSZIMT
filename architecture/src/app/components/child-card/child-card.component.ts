@@ -1,15 +1,17 @@
-import { Component, Input } from '@angular/core';
-import {MatCardModule} from '@angular/material/card';
+import { Component, Input} from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-child-card',
+  selector: 'app-card',
   standalone: true,
-  imports: [MatCardModule],
+  imports: [CommonModule],
   templateUrl: './child-card.component.html',
-  styleUrl: './child-card.component.css'
+  styleUrls: ['./child-card.component.css']
 })
 export class ChildCardComponent {
-  @Input() name: string = ''; // Title for the card
-  @Input() alter: string = ''; // Subtitle for the card
-  @Input() info: string = ''; // Content inside the card
+  @Input() title: string = '';
+  @Input() description: string = '';
+  @Input() imageUrl: string = '';
+  @Input() buttonText: string = '';
+  @Input() buttonLink: string = '#';
 }

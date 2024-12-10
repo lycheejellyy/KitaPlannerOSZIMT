@@ -1,9 +1,8 @@
-<mat-card appearance="outlined">
-    <mat-card-header>
-    <mat-card-title-group>
-      <mat-card-title>{{name}}</mat-card-title>
-      <mat-card-subtitle>{{alter}}</mat-card-subtitle>
-    </mat-card-title-group>
-  </mat-card-header>
-    <mat-card-content>{{info}}</mat-card-content>
-</mat-card>
+<div class="card">
+  <img *ngIf="imageUrl" [src]="imageUrl" alt="Card image" class="card-image" />
+  <div class="card-content">
+    <h3 class="card-title">{{ title }}</h3>
+    <p class="card-description">{{ description }}</p>
+    <a *ngIf="buttonText" [href]="buttonLink" class="card-button">{{ buttonText }}</a>
+  </div>
+</div>
