@@ -9,9 +9,5 @@ const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 ]
 
-@NgModule({
-  imports: [BrowserModule, RouterModule.forRoot(routes),AppComponent,HomeComponent],
-  declarations: [],
-  bootstrap: [],
-})
+
 export class AppModule {}
