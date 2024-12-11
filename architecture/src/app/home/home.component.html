@@ -3,11 +3,8 @@
 <app-nav-bar></app-nav-bar>
 
 <app-card
-  title="Beautiful Mountain"
-  description="A stunning mountain view during sunset."
-  imageUrl="https://via.placeholder.com/600x300"
-  buttonText="Learn More"
-  buttonLink="https://example.com/mountain"
+*ngFor="let child of children" [child]="child"
+[title]="card.name"
 ></app-card>
 
 <app-card

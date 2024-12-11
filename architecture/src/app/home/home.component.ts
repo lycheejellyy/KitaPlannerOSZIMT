@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavBarComponent } from "../components/nav-bar/nav-bar.component";
 import { ChildCardComponent } from "../components/child-card/child-card.component";
+import { ChildService } from '../services/child.services';
 
 @Component({
   selector: 'app-home',
@@ -9,6 +10,13 @@ import { ChildCardComponent } from "../components/child-card/child-card.componen
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
+
+  cards: any[] = [];
+
+  constructor(private childService: ChildService) {}
+  ngOnInit(): void {
+    this.childService.getChildren().subscribe(data => this.cards = data);
+  }
 
 }

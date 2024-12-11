@@ -1,8 +1,8 @@
 <div class="card">
   <img *ngIf="imageUrl" [src]="imageUrl" alt="Card image" class="card-image" />
   <div class="card-content">
-    <h3 class="card-title">{{ title }}</h3>
-    <p class="card-description">{{ description }}</p>
+    <h3 class="card-name">{{ name }}</h3>
+    <p class="card-description">Geschlecht: {{ gender }}, Geburtstag: {{ birthdate }}, Kita: {{ kita }}, Betreuer: {{ supervisor }}, Alter: {{ age_in_months }} Monate</p>
     <a *ngIf="buttonText" [href]="buttonLink" class="card-button">{{ buttonText }}</a>
   </div>
 </div>
