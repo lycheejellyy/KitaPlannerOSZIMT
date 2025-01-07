@@ -3,8 +3,8 @@
 <app-nav-bar></app-nav-bar>
 
 <app-card
-*ngFor="let child of children" [child]="child"
-[title]="card.name"
+*ngFor="let child of cards" [child]="child"
+[title]="child.name"
 ></app-card>
 
 <app-card
