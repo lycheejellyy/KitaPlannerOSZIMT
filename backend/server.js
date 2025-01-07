@@ -1,4 +1,5 @@
-const express = require('express'),
+const express = require('express');
+const cors = require('cors');
 app = express()
 
 const PORT = 3000;
@@ -6,6 +7,7 @@ const db = require('./config/db')
 childrenRoutes = require('./controllers/childController')
 
 //middleware
+app.use(cors()); 
 app.use('/api/children', childrenRoutes)
 
 

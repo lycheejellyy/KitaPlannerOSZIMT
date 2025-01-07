@@ -9,10 +9,6 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./child-card.component.css']
 })
 export class ChildCardComponent {
-  @Input() child!: { name: string, gender: string, birthdate: string, kita: string, supervisor: string, age_in_months: string };
+  @Input() child!: { name: string, gender: string, birthdate: string, kita: string, supervisor: string, age_in_months: number };
   @Input() title: string = '';
-  @Input() description: string = '';
-  @Input() imageUrl: string = '';
-  @Input() buttonText: string = '';
-  @Input() buttonLink: string = '#';
 }
