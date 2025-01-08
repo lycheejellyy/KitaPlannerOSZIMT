@@ -28,6 +28,6 @@ export class HomeComponent implements OnInit {
   }
 
   private formatDate(dateString: string): string {
-    return format(new Date(dateString), 'dd.M.yyyy'); 
+    return format(new Date(dateString), 'dd.MM.yyyy'); 
   }
 }
