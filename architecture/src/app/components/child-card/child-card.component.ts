@@ -1,10 +1,12 @@
 import { Component, Input} from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatListModule} from '@angular/material/list';
 
 @Component({
   selector: 'app-card',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, MatDividerModule, MatListModule],
   templateUrl: './child-card.component.html',
   styleUrls: ['./child-card.component.css']
 })

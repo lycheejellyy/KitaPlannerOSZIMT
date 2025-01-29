@@ -1,13 +1,10 @@
 <div class="card">
   <div class="card-content">
     <h3 class="card-name">{{ child.name }}</h3>
-    <p class="card-description">Geschlecht: {{ child.gender }}, Geburtstag: {{ child.birthdate }}, Kita: {{ child.kita }}, Betreuer: {{ child.supervisor }}, Alter: {{ child.age_in_months }} Monate</p>
-  </div>
-</div>
-
-<div class="card">
-  <div class="card-content">
-    <h3>Simple Testcard</h3>
-    <p>I wanna implement PopUp to edit child card</p>
+    <mat-list class="card-description">
+      <mat-list-item>{{ child.gender }}  |  {{ child.birthdate }}  |  {{ child.age_in_months }} Monate</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>betreut von {{ child.supervisor }} - {{ child.kita }}</mat-list-item>
+    </mat-list>
   </div>
 </div>

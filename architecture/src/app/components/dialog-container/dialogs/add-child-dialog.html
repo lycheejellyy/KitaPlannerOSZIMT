@@ -1,0 +1,45 @@
+<h2 mat-dialog-title>Kind hinzufügen</h2>
+<mat-dialog-content>
+    <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Name</mat-label>
+          <input matInput placeholder="Name">
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-button-toggle-group
+    name="favoriteColor"
+    aria-label="Favorite Color"
+  >
+    <mat-button-toggle value="red">Weiblich</mat-button-toggle>
+    <mat-button-toggle value="blue">Männlich</mat-button-toggle>
+  </mat-button-toggle-group>
+      </p>
+      <p>
+        <mat-form-field class="example-full-width">
+          <mat-label>Geburtsdatum</mat-label>
+          <input matInput [matDatepicker]="picker">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="picker">
+            <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+          </mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Kita</mat-label>
+          <input matInput placeholder="Kita">
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Betreuer</mat-label>
+          <input matInput placeholder="Betreuer">
+        </mat-form-field>
+      </p> 
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close>Abbrechen</button>
+  <button mat-button mat-dialog-close cdkFocusInitial>Speichern</button>
+</mat-dialog-actions>

@@ -4,12 +4,11 @@ import { ChildCardComponent } from "../components/child-card/child-card.componen
 import { ChildService } from '../services/child.services';
 import { CommonModule } from '@angular/common';
 import { format } from 'date-fns';
-import { DialogAnimationsExample, DialogAnimationsExampleDialog } from '../components/pop-up/pop-up.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, NavBarComponent, ChildCardComponent, DialogAnimationsExample, DialogAnimationsExampleDialog],
+  imports: [CommonModule, NavBarComponent, ChildCardComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

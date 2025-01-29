@@ -3,7 +3,7 @@
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  max-width: 600px; /* Increased width */
+  max-width: 80vw; /* Increased width */
   margin: 20px ; /* Centered horizontally */
   font-family: Arial, sans-serif;
 }

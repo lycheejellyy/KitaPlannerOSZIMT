@@ -1,13 +1,10 @@
-import {ChangeDetectionStrategy, Component, inject} from '@angular/core';
+import {ChangeDetectionStrategy, Component, inject, Input, Type} from '@angular/core';
 import {MatButtonModule} from '@angular/material/button';
 import {
-  MatDialog,
-  MatDialogActions,
-  MatDialogClose,
-  MatDialogContent,
-  MatDialogRef,
-  MatDialogTitle,
+  MatDialog
 } from '@angular/material/dialog';
+import { DefaultDialog, DialogContainerComponent } from '../dialog-container/dialog-container.component';
+import { AddChildDialog } from '../dialog-container/dialog-container.component';
 
 /**
  * @title Dialog Animations
@@ -21,24 +18,17 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DialogAnimationsExample {
+  @Input() buttontxt: string = '';
+  @Input() dialogComponent: Type<any> = DefaultDialog;
   readonly dialog = inject(MatDialog);
 
-  openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
-    this.dialog.open(DialogAnimationsExampleDialog, {
-      width: '250px',
-      enterAnimationDuration,
-      exitAnimationDuration,
+  AddChildDialog = AddChildDialog;
+
+  openDialog(): void {
+    this.dialog.open(DialogContainerComponent, {
+      width: '400px',
+      data: { component: this.dialogComponent},
     });
   }
 }
 
-@Component({
-  selector: 'dialog-animations-example-dialog',
-  templateUrl: 'dialog-animations-example-dialog.html',
-  imports: [MatButtonModule, MatDialogActions, MatDialogClose, MatDialogTitle, MatDialogContent],
-  standalone: true,
-  changeDetection: ChangeDetectionStrategy.OnPush,
-})
-export class DialogAnimationsExampleDialog {
-  readonly dialogRef = inject(MatDialogRef<DialogAnimationsExampleDialog>);
-}
