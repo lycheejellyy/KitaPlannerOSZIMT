@@ -11,4 +11,9 @@ export class ChildService {
   getChildren(): Observable<any[]> {
     return this.http.get<any[]>(this.apiUrl);
   }
+
+  addChild(childData: any): Observable<any> {
+    return this.http.post<any>(this.apiUrl, childData);
+  }
+
 }

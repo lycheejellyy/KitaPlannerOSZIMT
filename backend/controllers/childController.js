@@ -23,7 +23,7 @@ router.delete('/:id', async(req,res) => {
 router.post('/', async(req,res) => {
   await service.addOrEditChild(req.body)
   res.status(201).send('created successfully')
-}) 
+})
 
 
 module.exports = router;

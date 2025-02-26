@@ -9,6 +9,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatIconModule } from '@angular/material/icon';
+import { FormsModule } from '@angular/forms';
+import { ChildService } from '../../services/child.services';
 
 
 
@@ -44,9 +46,49 @@ export class DialogContainerComponent {
     MatDatepickerModule,
     MatNativeDateModule,
     MatButtonToggleModule,
-    MatIconModule]
+    MatIconModule,
+  FormsModule],
 })
-export class AddChildDialog {}
+export class AddChildDialog {
+  child = {
+    name: '',
+    gender: '',
+    birthdate: '',
+    kita: '',
+    supervisor: ''
+  }
+
+  constructor(private childService: ChildService, private dialogRef: MatDialogRef<AddChildDialog>) {}
+
+  addChild() {
+    console.log('Before sending:', this.child);
+    if (this.child.birthdate) {
+      const dateObj = new Date(this.child.birthdate);
+      this.child.birthdate = dateObj.toISOString().split('T')[0]; // Convert to 'YYYY-MM-DD'
+    } else {
+      console.warn('Birthdate is missing!');
+    }
+
+    this.childService.addChild(this.child).subscribe({
+      next: (response) => {
+        console.log('Child added successfully:', response);
+      },
+      error: (error) => {
+        console.error('Error adding child:', error);
+      }
+    });
+    window.location.reload();
+  }
+
+  close() {
+    this.dialogRef.close();
+  }
+
+  save() {
+    this.dialogRef.close(this.child); 
+  }
+
+}
 
 //Fallback dialog - if visible check button which calls the dialog
 @Component({

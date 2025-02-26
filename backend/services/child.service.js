@@ -18,7 +18,7 @@ module.exports.deleteChild = async (id)=>{
       return rows;
 }
 
-module.exports.addOrEditChild = async (obj, id = 5)=>{
-  const [rows] = await db.query("CALL adding_children(?,?,?,?,?,?)", [obj.name, obj.gender, obj.birthdate, obj.kita, obj.supervisor, id])
-    return rows;
+module.exports.addOrEditChild = async (obj, id = 0)=>{
+  const [data] = await db.query("CALL adding_children(?,?,?,?,?,?)", [obj.name, obj.gender, obj.birthdate, obj.kita, obj.supervisor, id])
+    return data;
 }
