@@ -4,7 +4,8 @@ import {
   MatDialog
 } from '@angular/material/dialog';
 import { DefaultDialog, DialogContainerComponent } from '../dialog-container/dialog-container.component';
-import { AddChildDialog } from '../dialog-container/dialog-container.component';
+import { AddChildDialog, ActionsChildDialog } from '../dialog-container/dialog-container.component';
+import {MatIconModule} from '@angular/material/icon';
 
 /**
  * @title Dialog Animations
@@ -14,15 +15,17 @@ import { AddChildDialog } from '../dialog-container/dialog-container.component';
   styleUrl: 'pop-up.component.css',
   templateUrl: 'pop-up.component.html',
   standalone: true,
-  imports: [MatButtonModule],
+  imports: [MatButtonModule, MatIconModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DialogAnimationsExample {
   @Input() buttontxt: string = '';
+  @Input() iconname: string = '';
   @Input() dialogComponent: Type<any> = DefaultDialog;
   readonly dialog = inject(MatDialog);
 
   AddChildDialog = AddChildDialog;
+  ActionsChildDialog = ActionsChildDialog;
 
   openDialog(): void {
     this.dialog.open(DialogContainerComponent, {

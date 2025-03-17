@@ -44,3 +44,10 @@
 .card-button:hover {
   background-color: #0056b3;
 }
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+.example-spacer-small {
+  flex: 1 10 auto;
+}

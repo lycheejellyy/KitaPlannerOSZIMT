@@ -11,7 +11,7 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { ChildService } from '../../services/child.services';
-
+import { DialogAnimationsExample} from '../pop-up/pop-up.component';
 
 
 @Component({
@@ -30,7 +30,6 @@ export class DialogContainerComponent {
     @Inject(MAT_DIALOG_DATA) public data: { component: Type<any> }
   ) {}
 }
-
 
 @Component({
   selector: 'add-child-dialog',
@@ -87,6 +86,30 @@ export class AddChildDialog {
   save() {
     this.dialogRef.close(this.child); 
   }
+
+}
+
+@Component({
+  selector: 'actions-child-dialog',
+  templateUrl: 'dialogs/actions-child-dialog.html',
+  standalone: true,
+  imports: [MatDialogTitle,
+    MatDialogContent,
+    MatDialogActions,
+    MatDialogClose,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatButtonToggleModule,
+    MatIconModule,
+  FormsModule, DialogAnimationsExample],
+})
+
+export class ActionsChildDialog{
+
+  constructor(private dialogRef: MatDialogRef<ActionsChildDialog>) {}
 
 }
 
