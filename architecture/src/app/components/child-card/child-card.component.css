@@ -1,9 +1,53 @@
-@use '@angular/material' as mat;
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-width: 80vw; /* Increased width */
+  margin: 20px ; /* Centered horizontally */
+  font-family: Arial, sans-serif;
+}
 
+.card-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 
-:root {
-  @include mat.card-overrides((
-    subtitle-text-color: orange,
-    elevated-container-color: red,
-  ));
+.card-content {
+  padding: 16px;
+}
+
+.card-name {
+  font-size: 20px; /* Slightly larger for the wider card */
+  font-weight: bold;
+  margin: 0 0 8px;
+}
+
+.card-description {
+  font-size: 16px;
+  color: #555;
+  margin: 0 0 16px;
+}
+
+.card-button {
+  display: inline-block;
+  padding: 10px 20px; /* Larger button size for the wider card */
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.card-button:hover {
+  background-color: #0056b3;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+.example-spacer-small {
+  flex: 1 10 auto;
 }

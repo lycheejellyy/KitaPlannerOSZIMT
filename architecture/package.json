@@ -1,7 +1,7 @@
 {
-  "name": "angular.io-example",
+  "name": "kita-planner",
   "version": "0.0.0",
-  "description": "Example project from an angular.io guide.",
+  "description": "Kita-Project with Kuno Beller`s table for children`s development.",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -24,6 +24,8 @@
     "@angular/platform-browser-dynamic": "17.2.4",
     "@angular/router": "17.2.4",
     "angular-in-memory-web-api": "~0.17.0",
+    "cors": "^2.8.5",
+    "date-fns": "^4.1.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.0"
@@ -45,6 +47,6 @@
     "karma-jasmine-html-reporter": "~2.1.0",
     "protractor": "~7.0.0",
     "ts-node": "~10.9.0",
-    "typescript": "~4.9.3"
+    "typescript": "^5.3.3"
   }
 }

@@ -1,0 +1,8 @@
+<app-nav-bar></app-nav-bar>
+
+<div *ngFor="let child of cards">
+  <app-card
+    [child]="child"
+    [title]="child.name">
+  </app-card>
+</div>

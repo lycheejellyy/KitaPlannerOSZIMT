@@ -1,9 +1,14 @@
-<mat-card appearance="outlined">
-    <mat-card-header>
-    <mat-card-title-group>
-      <mat-card-title>{{name}}</mat-card-title>
-      <mat-card-subtitle>{{alter}}</mat-card-subtitle>
-    </mat-card-title-group>
-  </mat-card-header>
-    <mat-card-content>{{info}}</mat-card-content>
-</mat-card>
+<div class="card">
+  <div class="card-content">
+    <mat-toolbar-row>
+      <h3 class="card-name">{{ child.name }}</h3>
+      <span class="example-spacer"></span>
+      <dialog-animations-example iconname="more_vert" [dialogComponent]="ActionsChildDialog"></dialog-animations-example>
+    </mat-toolbar-row>
+    <mat-list class="card-description">
+      <mat-list-item>{{ child.gender }}  |  {{ child.birthdate }}  |  {{ child.age_in_months }} Monate</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>betreut von {{ child.supervisor }} - {{ child.kita }}</mat-list-item>
+    </mat-list>
+  </div>
+</div>

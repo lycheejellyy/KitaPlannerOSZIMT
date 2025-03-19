@@ -1,0 +1,46 @@
+<h2 mat-dialog-title>Kind hinzufügen</h2>
+<mat-dialog-content>
+    <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Name</mat-label>
+          <input matInput placeholder="Name" [(ngModel)]="child.name">
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-button-toggle-group
+    name="favoriteColor"
+    aria-label="Favorite Color"
+    [(ngModel)]="child.gender"
+  >
+    <mat-button-toggle value="weiblich">Weiblich</mat-button-toggle>
+    <mat-button-toggle value="männlich">Männlich</mat-button-toggle>
+  </mat-button-toggle-group>
+      </p>
+      <p>
+        <mat-form-field class="example-full-width">
+          <mat-label>Geburtsdatum</mat-label>
+          <input matInput [matDatepicker]="picker" [(ngModel)]="child.birthdate">
+          <mat-hint>Format: YYYY-MM-DD</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="picker">
+            <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+          </mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>        
+      </p>
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Kita</mat-label>
+          <input matInput placeholder="Kita" [(ngModel)]="child.kita">
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Betreuer</mat-label>
+          <input matInput placeholder="Betreuer" [(ngModel)]="child.supervisor">
+        </mat-form-field>
+      </p> 
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close>Abbrechen</button>
+  <button mat-button mat-dialog-close cdkFocusInitial (click)="addChild()">Speichern</button>
+</mat-dialog-actions>
