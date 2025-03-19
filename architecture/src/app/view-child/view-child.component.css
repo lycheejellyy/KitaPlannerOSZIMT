@@ -1,0 +1,22 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  .example-spacer-small {
+    flex: 1 10 auto;
+  }
+
+  mat-toolbar{
+    background-color: #FFFFFF;
+  }
+
+  .app-name{
+    font-size: 40px;
+  }
+
+  .greenicon{
+    color: #8DC55F;
+  }
+
+  button:hover{
+    background-color: #d5d5d5;
+  }

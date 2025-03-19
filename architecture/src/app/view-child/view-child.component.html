@@ -1,1 +1,15 @@
-<p>hier sehen sie das kind nummer: </p>
+<mat-toolbar>
+    <mat-toolbar-row>
+    <button mat-button class="app-name" aria-label="Example icon-button with menu icon">
+      <mat-icon inline="true" class="greenicon">extension</mat-icon>
+      <span>Beller-Online</span>
+    </button>
+</mat-toolbar-row>
+  </mat-toolbar>
+<app-card
+  *ngIf="child"
+  [child]="child"
+  [title]="child.name">
+</app-card>
+<p>entwicklungstabelle</p>
+<p>entwicklungstabelle</p>

@@ -16,3 +16,7 @@
   .greenicon{
     color: #8DC55F;
   }
+
+  button:hover{
+    background-color: #d5d5d5;
+  }
