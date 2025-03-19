@@ -1,7 +1,7 @@
 {
-  "name": "angular.io-example",
+  "name": "kita-planner",
   "version": "0.0.0",
-  "description": "Example project from an angular.io guide.",
+  "description": "Kita-Project with Kuno Beller`s table for children`s development.",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
